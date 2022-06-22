@@ -45,16 +45,28 @@ body, .meme {
    position: absolute;
    width: 100px;
    left: 0;
-   margin-top: 50px;
-   font-size: 38px;
+   right: 0;
+   top: 0;
+   margin: auto;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   margin-top: 150px;
+   text-transform: uppercase;
+   -webkit-text-stroke-width: 3px;
+   -webkit-text-stroke-color: #000;
+   font-size: 40px;
+   font-weight: bold;
    color: white;
    text-shadow: 2px 0 0 #000, -2px 0 0 #000 0 2px #000, 0 -2px 0 rgb(255, 250, 250), 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 0 #000;
 }
 
 .meme span:nth-child(2) {
-   margin-top: 290px;
+   margin-top: 580px;
 }
 
 .meme img {
-   width: 100%;
+   width: 600px;
 }

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import html2canvas from 'html2canvas';
 
@@ -8,21 +8,21 @@ function App() {
    const [linea2, setLinea2] = useState("");
    const [imagen, setImagen] = useState("");
 
-   const onChangeLinea1 = function(evento) {
+   const onChangeLinea1 = function (evento) {
       // alert(evento.target.value)
       setLinea1(evento.target.value)
    }
 
-   const onChangeLinea2 = function(evento) {
+   const onChangeLinea2 = function (evento) {
       // alert(evento.target.value)
       setLinea2(evento.target.value)
    }
 
-   const onChangeImagen = function(evento) {
+   const onChangeImagen = function (evento) {
       setImagen(evento.target.value)
    }
 
-   const onClickExportar = function(evento) {
+   const onClickExportar = function (evento) {
       alert("Exportar")
       html2canvas(document.querySelector("#meme")).then(canvas => {
          let img = canvas.toDataURL("image/png");
@@ -45,9 +45,9 @@ function App() {
             <option value="smart">Smart Guy</option>
          </select> <br />
 
-         <input onChange={onChangeLinea1} type="text" placeholder="Línea 1" /> <br />
+         <input onChange={onChangeLinea1} type="text" maxLength="22" placeholder="Línea 1" /> <br />
 
-         <input onChange={onChangeLinea2} type="text" placeholder="Línea 2" /> <br />
+         <input onChange={onChangeLinea2} type="text" maxLength="22" placeholder="Línea 2" /> <br />
 
          <button onClick={onClickExportar}>Exportar</button>
 
@@ -55,7 +55,7 @@ function App() {
          <div className="meme" id="meme">
             <span>{linea1}</span>
             <span>{linea2}</span>
-            <img src={`/img/${imagen}.jpg`} />
+            <img src={`/img/${imagen}.jpg`} alt="Meme" />
          </div>
 
       </div>
